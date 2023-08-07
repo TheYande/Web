@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: comic-sans, sans-serif;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.err {
+  font-size: 15rem;
+  color: #f42020;
+  text-shadow: 0 0 10px #f00;
+  margin: 0;
+  user-select: none;
+
+    
+}
+/*AAAAAAAAAAAAAAAAA*/
+
+.error-message {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+@keyframes glitch-animation {
+  0%, 100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translate(0, 0) rotate(0) scale(1);
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+  }
+  5%, 95% {
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0% 100%);
+   transform: translate(-40vw, 10vh) rotate(32deg) skew(10deg, 300deg) scale(1.1);
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+  }
+  10%, 40%,  80% {
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 90%);
+   transform: translate(20vw, 40vh) rotate(73deg) skew(134deg, 20deg) scale(1.1);
+    font-weight: normal;
+    text-decoration: line-through;
+    font-style: normal;
+  }
+  15%,  55% {
+    clip-path: polygon(10% 0, 100% 0, 100% 90%, 0% 100%);
+    transform: translate(-9vw, -26vh) rotate(73deg) skew(102deg, -50deg) scale(1.1);
+    font-weight: bold;
+    text-decoration: none;
+    font-style: italic;
+  }
+  25%, 65% {
+    clip-path: polygon(0 0, 90% 10%, 100% 100%, 10% 100%);
+    transform: translate(-9vw, -15vh) rotate(84deg) skew(14deg, -36deg) scale(1.1);
+    font-weight: normal;
+    text-decoration: underline;
+    font-style: normal;
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: translate(33vw, -18vh) rotate(312deg) skew(-47deg, 97deg) scale(1.1);
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="err" id="err">404</h1>
+  <p class="error-message" id="error-message">...</p>
+</div>
+
+<script>
+  // add a aray item to add quote or something this is what chatgpt told me lmao
+
+const quotes = [
+  "Well, this is interesting.",
+  "YOU SHALL NOT PASS!!!!!",
+  "Ya goofed up, didn't you?",
+  "Lost in the digital wilderness.",
+  "Oops, something went wrong.",
+  "Looks like we hit a dead end.",
+  "Nothing seems to be here.",
+  "Hmmm... this page seems to be missing.",
+  "The page you're looking for vanished.",
+  "Looks like we're on a wild goose chase.",
+  //these ones are not serious at all (to be fair the ones above arent serious at all)
+  "Bruh.",
+  "This deserves a 🥔.",
+  "🥔?",
+  "*Violent microwave sounds*",
+  "404.",
+  "Redguy would love to see this.",
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "Toe.",
+];
+
+// stuff for random
+function displayRandomQuote() {
+  const errorMessage = document.getElementById("error-message");
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  errorMessage.textContent = quotes[randomIndex];
+}
+
+// show the random
+window.onload = displayRandomQuote;
+document.getElementById("err").addEventListener("click", displayRandomQuote);
+</script>
+</body>
+</html>
